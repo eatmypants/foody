@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#292929"
+    android:stretchColumns="1" >
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu"
+            android:height="260dp"
+            android:width="170dp" />
+
+        <Button
+            android:id="@+id/cuisins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+            android:background="@drawable/cui"
+            android:height="260dp"
+            android:onClick="cuisClick"
+            android:width="150dp" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/rest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rest"
+            android:height="260dp"
+            android:onClick="restClick"
+            android:width="170dp" />
+
+        <Button
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+            android:background="@drawable/search"
+            android:height="260dp"
+            android:onClick="searchClick"
+            android:width="150dp" />
+    </TableRow>
+
+</TableLayout>
