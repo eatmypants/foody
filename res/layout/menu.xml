@@ -1,48 +1,43 @@
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-
-
-
-<TableLayout 
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#292929"
-    android:stretchColumns="1" >
-
-    <TableRow>
-    </TableRow>
+    android:layout_marginTop="-103dp" >
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/CuisinesButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.47"
+        android:layout_height="400dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="106dp"
         android:background="#ffffff"
-        />
+        android:onClick="cuisClick"
+        android:text="Cuisines" />
 
-    <TableRow>
-    </TableRow>
+    <Button
+        android:id="@+id/RestouransButton"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="#40362d"
+        android:onClick="restClick"
+        android:text="Restourans" />
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="5.44"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/CuisinesButton"
+        android:layout_marginTop="-105dp"
         android:src="@drawable/menuLogo" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.50"
-        android:background="#40342b"
-        />
-
-    
-</TableLayout>
-
 </RelativeLayout>
+
+
