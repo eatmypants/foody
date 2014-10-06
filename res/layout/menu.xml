@@ -2,19 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="-103dp" >
+    android:layout_marginTop="-103dp"
+    android:background="#ffffff" >
 
     <Button
         android:id="@+id/CuisinesButton"
         android:layout_width="wrap_content"
-        android:layout_height="400dp"
+        android:layout_height="254dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="106dp"
         android:background="#ffffff"
-        android:onClick="cuisClick"
-        android:text="Cuisines" />
+        android:onClick="cuisClick" />
 
     <Button
         android:id="@+id/RestouransButton"
@@ -23,9 +24,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
+        android:layout_marginBottom="-20dp"
         android:background="#40362d"
-        android:onClick="restClick"
-        android:text="Restourans" />
+        android:onClick="restClick" />
 
     <ImageView
         android:id="@+id/imageView1"
@@ -34,9 +35,24 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/menulogo" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/CuisinesButton"
-        android:layout_marginTop="-105dp"
-        android:src="@drawable/menuLogo" />
+        android:src="@drawable/cuibutton" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/restbutton" />
 
 </RelativeLayout>
 

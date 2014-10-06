@@ -18,7 +18,7 @@ public class WelcomeActivity extends Activity {
 	/**
 	 *Hold the length of time to keep the welcome screen up.
 	 */
-	private long splashDelay=3000; 
+	private long splashDelay=4000; 
 	/**
 	 * Set content view in welcome layout.
 	 */
