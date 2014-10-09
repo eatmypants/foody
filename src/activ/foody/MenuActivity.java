@@ -2,6 +2,9 @@ package activ.foody;
 
 
 
+
+
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -9,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 /**
+ * 
  * Menu window.
  */
 public class MenuActivity extends Activity
@@ -43,22 +47,14 @@ public class MenuActivity extends Activity
 		Intent intent = new Intent(this, CuisActivity.class);
 		startActivity(intent);
 	}
-	/**
-	 * Action when we click on search button.
-	 * When we click this button , we go to the searching window.
-	 */
-	public void searchClick(View v)
-	{
-		Intent intent = new Intent(this, SearchActivity.class);
-		startActivity(intent);
-	}
+
 	/**
 	 * Action when we click on restorans button.
 	 * When we click this button , we go to the restorans window.
 	 */
 	public void restClick(View v)
 	{
-		Intent intent = new Intent(this, RestActivity.class);
+		Intent intent = new Intent(this, AllRestaurantsActivity.class);
 		startActivity(intent);
 	}
 	

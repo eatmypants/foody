@@ -2,6 +2,9 @@ package activ.foody;
 
 
 import instruments.CustomPagerAdapter;
+
+import activ.foody.R;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;

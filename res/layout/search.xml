@@ -11,6 +11,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="144dp"
-        android:text="Searching is comming soon..blabla." />
+        android:text="Searching is comming soon..." />
 
 </RelativeLayout>
