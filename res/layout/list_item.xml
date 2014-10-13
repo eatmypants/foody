@@ -4,6 +4,12 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" 
     android:background="#ffffff">
+    
+    
+    <RelativeLayout
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#ffffff" >
 
     <!-- Product id (pid) - will be HIDDEN - used to pass to other activity -->
     <TextView
@@ -12,16 +18,32 @@
         android:layout_height="wrap_content"
         android:visibility="gone" />
 
+  
 
     <!-- Name Label -->
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/nopic" />
+
+
 
     <TextView
         android:id="@+id/name"
         android:layout_width="fill_parent"
         android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@+id/avatar"
         android:paddingLeft="6dip"
-        android:paddingTop="6dip"
-        android:textSize="25dip"
-        android:textStyle="bold" />
+        android:paddingTop="30dip"
+        android:textColor="#403729"
+        android:textSize="20dip"
+        />
+
+    </RelativeLayout>
 
 </LinearLayout>

@@ -5,6 +5,7 @@ package activ.foody;
 
 
 
+import activ.rest.AllRestaurantsActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -52,10 +53,18 @@ public class MenuActivity extends Activity
 	 * Action when we click on restorans button.
 	 * When we click this button , we go to the restorans window.
 	 */
+
 	public void restClick(View v)
 	{
-		Intent intent = new Intent(this, AllRestaurantsActivity.class);
-		startActivity(intent);
+
+		// Starting new intent
+		Intent in = new Intent(getApplicationContext(),
+				AllRestaurantsActivity.class);
+		
+
+		
+		// starting new activity and expecting some response back
+		startActivityForResult(in, 100);
 	}
 	
 }

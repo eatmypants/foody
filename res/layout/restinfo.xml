@@ -1,63 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#ffffff" >
+
+  
+
+
+  <!-- Footer aligned to bottom -->
+  <RelativeLayout
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/restfooter"
+    android:gravity="center" >
+
+      <Button
+          android:id="@+id/button1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentTop="true"
+          android:layout_marginLeft="-260dp"
+          android:layout_marginTop="7dp"
+          android:onClick="back"
+          android:background="@drawable/back" />
+  
+  </RelativeLayout>
+
+  <ScrollView
+      android:id="@+id/scroll"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_above="@+id/footer"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentRight="true"
+      android:layout_below="@+id/imageView1"
+      android:layout_marginTop="-38dp" >
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="#FFFFFF">
+    android:layout_centerVertical="true"
+    android:layout_marginBottom="30dp"
+    android:layout_marginTop="20dp"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
     
-    <!-- Name Label -->
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Restaurant Name"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:textSize="17dip"/>
-    
-    <!-- Input Name -->
-	<TextView android:id="@+id/inputName"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_margin="5dip"
-	    android:layout_marginBottom="15dip"
-	    android:singleLine="true"/>
-	
-	<!-- Price Label -->
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text=" AVG Price"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:textSize="17dip"/>
-    
-    <!-- Input Price -->
-	<TextView android:id="@+id/inputPrice" 
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_margin="5dip"
-	    android:layout_marginBottom="15dip"
-	    android:singleLine="true"
-	    android:inputType="numberDecimal"/>
-	
-	<!-- Description Label -->
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Description"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:textSize="17dip"/>
+
     
     <!-- Input description -->
-	<TextView android:id="@+id/inputDesc" 
+
+    <TextView
+        android:id="@+id/inputDesc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:layout_marginBottom="15dip"
+        android:layout_marginTop="20dp"
+        android:gravity="top"
+          android:paddingLeft="7dip"
+          android:paddingRight="7dip"
+        android:textColor="#403729"
+        android:textSize="16dip" />
+
+	<!-- Price Label -->
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/hr" />
+    
+        <RelativeLayout
+    android:id="@+id/dd"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:gravity="center" >
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp"
+        android:paddingLeft="7dip"
+        android:paddingRight="7dip"
+        android:paddingTop="7dip"
+        android:text=" Avarage price:"
+        android:textColor="#403729"
+        android:textSize="20dip" />
+    
+    <!-- Input Price -->
+
+	<TextView
+        android:id="@+id/inputPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dip"
+        android:textColor="#403729" />
+    
+    
+    </RelativeLayout>
+	
+	<!-- Price Label -->
+
+    <TextView android:layout_width="fill_parent"
+         android:id="@+id/location"
+        android:layout_height="wrap_content"
+        android:text="Where to find?"
+        android:paddingLeft="7dip"
+        android:paddingRight="7dip"
+        android:paddingTop="7dip"
+         android:textColor="#403729"
+        android:textSize="20dip"/>
+    
+    <!-- Input Price -->
+
+	<TextView android:id="@+id/inputLocation" 
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_margin="5dip"
 	    android:layout_marginBottom="15dip"
-	    android:lines="4"
-	    android:gravity="top"/>
+	     android:textColor="#403729"
+	 />
 	
+		<!-- Price Label -->
+    <TextView android:layout_width="fill_parent"
+         android:id="@+id/link"
+        android:layout_height="wrap_content"
+        android:text="Web-page:"
+        android:paddingLeft="7dip"
+        android:paddingRight="7dip"
+        android:paddingTop="7dip"
+         android:textColor="#403729"
+        android:textSize="20dip"/>
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 	
 </LinearLayout>
+</ScrollView>
+
+<ImageView
+    android:id="@+id/imageView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="-28dp"
+    android:src="@drawable/vapiano" />
+
+</RelativeLayout>

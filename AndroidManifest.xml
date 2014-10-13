@@ -27,7 +27,7 @@
      
         <!-- Add Restaurants Activity -->
         <activity
-            android:name=".AllRestaurantsActivity"
+            android:name="activ.rest.AllRestaurantsActivity"
              android:screenOrientation="portrait"
                   android:configChanges="keyboardHidden|orientation"
              >
@@ -50,7 +50,15 @@
         </activity>
         <!-- Restaurant information Activity -->
         <activity
-            android:name="activ.foody.RestInfoActivity"
+            android:name="activ.rest.RestInfoActivity"
+             android:screenOrientation="portrait"
+                  android:configChanges="keyboardHidden|orientation"
+            >
+        </activity>
+        
+         <!-- Restaurant information Activity -->
+        <activity
+            android:name="activ.rest.CuisRestActivity"
              android:screenOrientation="portrait"
                   android:configChanges="keyboardHidden|orientation"
             >
