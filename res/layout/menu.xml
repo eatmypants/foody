@@ -5,6 +5,8 @@
     android:layout_marginTop="-103dp"
     android:background="#ffffff" >
 
+    <!-- cuisines button -->
+
     <Button
         android:id="@+id/CuisinesButton"
         android:layout_width="wrap_content"
@@ -16,6 +18,7 @@
         android:layout_marginTop="106dp"
         android:background="#ffffff"
         android:onClick="cuisClick" />
+    <!-- restaurants button -->
 
     <Button
         android:id="@+id/RestouransButton"
@@ -27,9 +30,10 @@
         android:layout_marginBottom="-20dp"
         android:background="#40362d"
         android:onClick="restClick" />
+    <!-- menu logo -->
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/menulogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -37,17 +41,19 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:src="@drawable/menulogo" />
+    <!-- cuisine label -->
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/cuisineLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/CuisinesButton"
         android:src="@drawable/cuibutton" />
+    <!-- restaurant label -->
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/restaurantLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -55,5 +61,3 @@
         android:src="@drawable/restbutton" />
 
 </RelativeLayout>
-
-

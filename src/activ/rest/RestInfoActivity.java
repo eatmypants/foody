@@ -1,20 +1,13 @@
 package activ.rest;
 
 import instruments.JSONParser;
-
-
-
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-
-
 import activ.foody.R;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -26,32 +19,48 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.EditText;
 import android.widget.TextView;
-
-public class RestInfoActivity extends Activity {
-
-	TextView txtName;
+/**
+ *Screen with restaurant information.
+ */
+public class RestInfoActivity extends Activity
+{
+	/**
+	 * Text views where information were going to be put.
+	 * Avarage price of the restaurant.
+	 */
 	TextView txtPrice;
+	/**
+	 * Description of the restaurant.
+	 */
 	TextView txtDesc;
+	/**
+	 * Web page of the restaurant.
+	 */
 	TextView txtLink;
+	/**
+	 * Location of the restaurant.
+	 */
 	TextView txtLocation;
-	EditText TextView;
-
-
+	/**
+	 * Restaurant id.
+	 */
 	String rest_id;
-
-	// Progress Dialog
+	/**
+	 * Progress Dialog.
+	 */
 	private ProgressDialog pDialog;
-
-	// JSON parser class
+	/**
+	 * JSON parser class.
+	 */
 	JSONParser jsonParser = new JSONParser();
-
-	// single restaurant url
+	/**
+	 * Single restaurant url.
+	 */
 	private static final String url_restaurant_detials = "http://foodyapp.890m.com//android_connect/get_rest_details.php";
-
-
-	// JSON Node names
+	/**
+	 * JSON Node names.
+	 */
 	private static final String TAG_SUCCESS = "success";
 	private static final String TAG_RESTAURANTS = "restaurant";
 	private static final String TAG_RES_ID = "rest_id";
@@ -59,60 +68,103 @@ public class RestInfoActivity extends Activity {
 	private static final String TAG_DESCRIPTION = "description";
 	private static final String TAG_LOCATION = "location";
 	private static final String TAG_LINK = "link";
-
+	/**
+	 * On create method. Initilization of content and view.
+	 */
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		/**
 		 * No title on top
 		 */
-			requestWindowFeature(Window.FEATURE_NO_TITLE);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		/**
+		 * Set content view.
+		 */
 		setContentView(R.layout.restinfo);
-
+		/**
+		 * Find text views by id.
+		 * Description.
+		 */
 		TextView desc = (TextView)findViewById(R.id.inputDesc);
-	      Typeface custom_font = Typeface.createFromAsset(getAssets(),
-	      "fonts/koz.otf");
-	      desc.setTypeface(custom_font);
-	      
-	      TextView price = (TextView)findViewById(R.id.price);
-	      TextView location = (TextView)findViewById(R.id.location);
-	  
-	      TextView inputprice = (TextView)findViewById(R.id.inputPrice);
+		/**
+		 * Price label.
+		 */
+		 TextView price = (TextView)findViewById(R.id.price);
+		 /**
+		  * Location label.
+		  */
+	     TextView location = (TextView)findViewById(R.id.location);
+	     /**
+	      * Price.
+	      */
+	     TextView inputprice = (TextView)findViewById(R.id.inputPrice);
+	     /**
+	      * Location.
+	      */
 	      TextView inputlocation = (TextView)findViewById(R.id.inputLocation);
-	   
-	      
-	 
-	      
+	      /**
+	       * Link label.
+	       */
+	      TextView link= (TextView)findViewById(R.id.link);
+	      /**
+	       * Link.
+	       */
+	      TextView inputlink = (TextView)findViewById(R.id.inputLink);
+	      /**
+	       * EUR.
+	       */
+	      TextView EUR = (TextView)findViewById(R.id.EUR);
+	      /**
+	       * Comments label.
+	       */
+	      TextView comments= (TextView)findViewById(R.id.comments);
+	      /**
+	       * Comments.
+	       */
+	      TextView inputcomments = (TextView)findViewById(R.id.inputComments);
+	      /**
+	       * Fon creation.
+	       */
+	      Typeface custom_font = Typeface.createFromAsset(getAssets(),"fonts/koz.otf");
+	      /**
+	       * Put all textviews with koz.otf font.
+	       */
+	      desc.setTypeface(custom_font);
+	      link.setTypeface(custom_font);
+	      EUR.setTypeface(custom_font);
+	      inputlink.setTypeface(custom_font);
+	      comments.setTypeface(custom_font); 
+	      inputcomments.setTypeface(custom_font);
 	      price.setTypeface(custom_font);
 	      location.setTypeface(custom_font);
-	 
 	      inputprice.setTypeface(custom_font); 
 	      inputlocation.setTypeface(custom_font);
-	  
-		// getting restaurant details from intent
-		Intent i = getIntent();
-		
-		// getting restaurant id (rest_id) from intent
-		rest_id = i.getStringExtra(TAG_RES_ID);
-
-		// Getting complete restaurant details in background thread
-		new GetRestDetails().execute();
-
-	
-
-
-	}
-
+	      /**
+	       * Getting restaurant details from intent.
+	       */
+	      Intent i = getIntent();
+	      /**
+	       * Getting restaurant id (rest_id) from intent.
+	       */
+	      rest_id = i.getStringExtra(TAG_RES_ID);
+	      /**
+	       * Getting complete restaurant details in background thread.
+	       */
+	      new GetRestDetails().execute();
+	 }
 	/**
-	 * Background Async Task to Get complete restaurant details
-	 * */
-	class GetRestDetails extends AsyncTask<String, String, String> {
-
+	* Background Async Task to Get complete restaurant details
+	*/
+	class GetRestDetails extends AsyncTask<String, String, String> 
+	{
 		/**
 		 * Before starting background thread Show Progress Dialog
 		 * */
 		@Override
-		protected void onPreExecute() {
+		protected void onPreExecute() 
+		{
 			super.onPreExecute();
 			pDialog = new ProgressDialog(RestInfoActivity.this);
 			pDialog.setMessage("Loading rest details. Please wait...");
@@ -120,83 +172,98 @@ public class RestInfoActivity extends Activity {
 			pDialog.setCancelable(true);
 			pDialog.show();
 		}
-
 		/**
 		 * Getting restaurant details in background thread
 		 * */
-		protected String doInBackground(String... params) {
-
-			// updating UI from Background Thread
-			runOnUiThread(new Runnable() {
-				public void run() {
-					// Check for success tag
+		protected String doInBackground(String... params) 
+		{
+			/**
+			 * Updating UI from Background Thread.
+			 */
+			runOnUiThread(new Runnable() 
+			{
+				public void run() 
+				{
+					/**
+					 * Check for success tag.
+					 */
 					int success;
-					try {
-						// Building Parameters
+					try 
+					{
+						/**
+						 * Building Parameters..
+						 */
 						List<NameValuePair> params = new ArrayList<NameValuePair>();
 						params.add(new BasicNameValuePair("rest_id", rest_id));
-
-						// getting restaurant details by making HTTP request
-						// Note that restaurant details url will use GET request
-						JSONObject json = jsonParser.makeHttpRequest(
-								url_restaurant_detials, "GET", params);
-
-						// check your log for json response
+						/**
+						 * Getting restaurant details by making HTTP request.
+						 * Note that restaurant details url will use GET request.
+						 */
+						JSONObject json = jsonParser.makeHttpRequest(url_restaurant_detials, "GET", params);
+						/**
+						 * Check  log for json response.
+						 */
 						Log.d("Single Rest Details", json.toString());
-						
-						// json success tag
+						/**
+						 * Json success tag.
+						 */
 						success = json.getInt(TAG_SUCCESS);
-						if (success == 1) {
-							// successfully received restaurant details
-							JSONArray restaurantObj = json
-									.getJSONArray(TAG_RESTAURANTS); // JSON Array
-							
-							// get first restaurant object from JSON Array
+						if (success == 1) 
+						{
+							/**
+							 * Successfully received restaurant details.
+							 * JSON Array.
+							 */
+							JSONArray restaurantObj = json.getJSONArray(TAG_RESTAURANTS); 
+							/**
+							 * Get first restaurant object from JSON Array.
+							 * restaurant with this rest_id found.
+							 */
 							JSONObject restaurant = restaurantObj.getJSONObject(0);
-
-							// restaurant with this rest_id found
-							// Edit Text
-							
+							/**
+							 * Put in variables textview objects.
+							 */
 							txtPrice = (TextView) findViewById(R.id.inputPrice);
 							txtDesc = (TextView) findViewById(R.id.inputDesc);
-							
 							txtLocation = (TextView) findViewById(R.id.inputLocation);
-							
-							txtPrice.setText(restaurant.getString(TAG_AVG_PRICE));
+							txtLink = (TextView) findViewById(R.id.inputLink);
+							txtPrice.setText(restaurant.getString(TAG_AVG_PRICE ));
 							txtDesc.setText(restaurant.getString(TAG_DESCRIPTION));
-					;
 							txtLocation.setText(restaurant.getString(TAG_LOCATION));
-
-						}else{
+							txtLink.setText(restaurant.getString(TAG_LINK));
+						}else
+						{
 							// restaurant with rest_id not found
 						}
-					} catch (JSONException e) {
+					}catch (JSONException e) 
+					{
 						e.printStackTrace();
 					}
 				}
 			});
-
 			return null;
 		}
-
-
 		/**
 		 * After completing background task Dismiss the progress dialog
 		 * **/
-		protected void onPostExecute(String file_url) {
-			// dismiss the dialog once got all details
+		protected void onPostExecute(String file_url) 
+		{
+			/**
+			 * Dismiss the dialog once got all details.
+			 */
 			pDialog.dismiss();
 		}
 	}
-	
+	/**
+	 * Back button pressed. Go back to the all restaurant list.
+	 * @param v
+	 */
 	public void back(View v)
 	{
 		this.finish();
 		Intent intent = new Intent(this, AllRestaurantsActivity.class);
-		
 		startActivity(intent);
 	}
-
 	/**
 	 * Only portrait view.
 	 */
@@ -205,6 +272,4 @@ public class RestInfoActivity extends Activity {
 	{  
 		super.onConfigurationChanged(newConfig);  
 	}
-
-
 }

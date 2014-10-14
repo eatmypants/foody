@@ -1,33 +1,29 @@
 package activ.foody;
 
 import java.util.Timer;
-
 import java.util.TimerTask;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Window;
-
 /**
  * Welcome screen.
  */
 public class WelcomeActivity extends Activity {
-
 	/**
 	 *Hold the length of time to keep the welcome screen up.
 	 */
-	private long splashDelay=4000; 
+	private long splashDelay=3500; 
 	/**
 	 * Set content view in welcome layout.
 	 */
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-	/**
-	 * No title on top
-	 */
+		/**
+		 * No title on top
+		 */
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		/**
 		 * Welcome  view

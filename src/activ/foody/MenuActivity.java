@@ -1,10 +1,5 @@
 package activ.foody;
 
-
-
-
-
-
 import activ.rest.AllRestaurantsActivity;
 import android.app.Activity;
 import android.content.Intent;
@@ -14,10 +9,13 @@ import android.view.View;
 import android.view.Window;
 /**
  * 
- * Menu window.
+ * Menu window.With two buttons: "cuisines" and "restaurants".
  */
 public class MenuActivity extends Activity
 {
+	/**
+	 * On create method, content intilization.
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -48,23 +46,20 @@ public class MenuActivity extends Activity
 		Intent intent = new Intent(this, CuisActivity.class);
 		startActivity(intent);
 	}
-
 	/**
 	 * Action when we click on restorans button.
 	 * When we click this button , we go to the restorans window.
 	 */
-
 	public void restClick(View v)
 	{
-
-		// Starting new intent
+		/**
+		 * Start new intent.
+		 */
 		Intent in = new Intent(getApplicationContext(),
 				AllRestaurantsActivity.class);
-		
-
-		
-		// starting new activity and expecting some response back
+		/**
+		 * Starting new activity and expecting some response back.
+		 */
 		startActivityForResult(in, 100);
 	}
-	
 }
