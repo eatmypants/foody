@@ -103,7 +103,10 @@
                     android:paddingRight="10dip"
                     android:paddingTop="22dip"
                     android:text="8.00"
+<<<<<<< HEAD
                     android:textSize="13dip"
+=======
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
                     android:textColor="#1f1104" />
                 <!-- EUR label -->
 
@@ -116,7 +119,10 @@
                     android:layout_marginLeft="-7dp"
                     android:layout_toRightOf="@+id/inputPrice"
                     android:text="EUR" 
+<<<<<<< HEAD
                     android:textSize="13dip"
+=======
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
                     android:textColor="#1f1104"/>
             </RelativeLayout>
 
@@ -142,9 +148,13 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dip"
                 android:layout_marginBottom="15dip"
+<<<<<<< HEAD
                 android:paddingLeft="20dip"
                 android:gravity="top"
                 android:textSize="13dip"
+=======
+                android:gravity="top"
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
                 android:textColor="#1f1104"  />
             <!-- Link layout -->
 
@@ -175,6 +185,7 @@
                     android:id="@+id/inputLink"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+<<<<<<< HEAD
                     android:layout_alignParentRight="true"
                     android:layout_marginBottom="15dip"
                     android:layout_marginLeft="110dp"
@@ -185,6 +196,16 @@
                     android:textColor="#1f1104"
                     android:textSize="13dip" />
 
+=======
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginLeft="120dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="top"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:textColor="#1f1104"  />
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
             </RelativeLayout>
 
             <ImageView
@@ -212,9 +233,13 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dip"
                 android:layout_marginBottom="15dip"
+<<<<<<< HEAD
                 android:paddingLeft="20dip"
                 android:gravity="top"
                 android:textSize="13dip"
+=======
+                android:gravity="top"
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
                 android:text="Are comming soon ...(2nd iteration)" />
 
             <ImageView
@@ -232,9 +257,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+<<<<<<< HEAD
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="-28dp"
          />
+=======
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-28dp"
+        android:src="@drawable/vapiano" />
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 
 </RelativeLayout>

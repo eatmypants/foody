@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Window;
-
 /**
  * Welcome screen.
  */
@@ -15,8 +14,12 @@ public class WelcomeActivity extends Activity {
 	/**
 	 * Hold the length of time to keep the welcome screen up.
 	 */
+<<<<<<< HEAD
 	private long splashDelay = 3500;
 
+=======
+	private long splashDelay=3500; 
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	/**
 	 * Set content view in welcome layout.
 	 */

@@ -10,11 +10,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import activ.foody.MenuActivity;
 import activ.foody.R;
+<<<<<<< HEAD
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+=======
+import android.app.ListActivity;
+import android.app.ProgressDialog;
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
@@ -28,6 +33,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+<<<<<<< HEAD
 
 /**
  * All restaurants activity with list of all restaurants.
@@ -41,6 +47,13 @@ public class AllRestaurantsActivity extends ListActivity {
 	 * Connection detector class.
 	 */
 	instruments.ConnectionDetector cd3;
+=======
+/**
+ * All restaurants activity with list of all restaurants.
+ */
+public class AllRestaurantsActivity extends ListActivity 
+{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	/**
 	 * Progress Dialog.
 	 */
@@ -52,11 +65,19 @@ public class AllRestaurantsActivity extends ListActivity {
 	/**
 	 * Restaurants list.
 	 */
+<<<<<<< HEAD
 	ArrayList<HashMap<String, Object>> restaurantsList;
 	/**
 	 * Url to get all restaurants list.
 	 */
 	private static String url_all_restaurants = "http://foodyapp.890m.com//android_connect/get_all_restaurants.php";
+=======
+	ArrayList<HashMap<String, String>> restaurantsList;
+	/**
+	 * Url to get all restaurants list.
+	 */
+	private static String url_all_restaurants="http://foodyapp.890m.com//android_connect/get_all_restaurants.php";
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	/**
 	 * JSON Node names.
 	 */
@@ -64,23 +85,37 @@ public class AllRestaurantsActivity extends ListActivity {
 	private static final String TAG_restaurants = "restaurant";
 	private static final String TAG_rest_id = "rest_id";
 	private static final String TAG_NAME = "name";
+<<<<<<< HEAD
 	private static final String TAG_AVATAR = "avatar_image_url";
+=======
+	private static final String TAG_PHOTO = "photo";
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	private static final String TAG_CUI = "cuisine";
 	/**
 	 * restaurants JSONArray.
 	 */
 	JSONArray restaurants = null;
+<<<<<<< HEAD
 
+=======
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	/**
 	 * On create method, content and view intilization.
 	 */
 	@Override
+<<<<<<< HEAD
 	public void onCreate(Bundle savedInstanceState) {
 
+=======
+	public void onCreate(Bundle savedInstanceState) 
+	{
+		super.onCreate(savedInstanceState);
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 		/**
 		 * No title on top
 		 */
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+<<<<<<< HEAD
 
 		super.onCreate(savedInstanceState);
 		/**
@@ -137,6 +172,16 @@ public class AllRestaurantsActivity extends ListActivity {
 		 * Hashmap for ListView.
 		 */
 		restaurantsList = new ArrayList<HashMap<String, Object>>();
+=======
+		/**
+		 * Set content view.
+		 */
+		setContentView(R.layout.all_restaurants);
+		/**
+		 * Hashmap for ListView.
+		 */
+		restaurantsList = new ArrayList<HashMap<String, String>>();
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 		/**
 		 * Loading restaurants in Background Thread.
 		 */
@@ -146,6 +191,7 @@ public class AllRestaurantsActivity extends ListActivity {
 		 */
 		ListView lv = getListView();
 		/**
+<<<<<<< HEAD
 		 * on seleting single restaurant launching restaurant information Screen
 		 */
 		lv.setOnItemClickListener(new OnItemClickListener() {
@@ -162,6 +208,24 @@ public class AllRestaurantsActivity extends ListActivity {
 				 */
 				Intent in = new Intent(getApplicationContext(),
 						RestInfoActivity.class);
+=======
+		 * on seleting single restaurant
+		 * launching restaurant information Screen
+		 */
+		lv.setOnItemClickListener(new OnItemClickListener() 
+		{
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,int position, long id)
+			{
+				/**
+				 * Getting values from selected ListItem.
+				 */
+				String rest_id = ((TextView) view.findViewById(R.id.rest_id)).getText().toString();
+				/**
+				 * Starting new intent.
+				 */
+				Intent in = new Intent(getApplicationContext(),RestInfoActivity.class);
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 				/**
 				 * Sending rest_id to next activity.
 				 */
@@ -173,16 +237,29 @@ public class AllRestaurantsActivity extends ListActivity {
 			}
 		});
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Background Async Task to Load all restaurant by making HTTP Request
 	 * */
 	class LoadAllrestaurants extends AsyncTask<String, String, String> {
+=======
+	/**
+	 * Background Async Task to Load all restaurant by making HTTP Request
+	 * */
+	class LoadAllrestaurants extends AsyncTask<String, String, String> 
+	{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 		/**
 		 * Before starting background thread Show Progress Dialog
 		 * */
 		@Override
+<<<<<<< HEAD
 		protected void onPreExecute() {
+=======
+		protected void onPreExecute() 
+		{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 			super.onPreExecute();
 			pDialog = new ProgressDialog(AllRestaurantsActivity.this);
 			pDialog.setMessage("Loading. Please wait...");
@@ -193,7 +270,12 @@ public class AllRestaurantsActivity extends ListActivity {
 		/**
 		 * getting All restaurants from url
 		 * */
+<<<<<<< HEAD
 		protected String doInBackground(String... args) {
+=======
+		protected String doInBackground(String... args) 
+		{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 			/**
 			 * Building Parameters.
 			 */
@@ -201,8 +283,12 @@ public class AllRestaurantsActivity extends ListActivity {
 			/**
 			 * Getting JSON string from URL.
 			 */
+<<<<<<< HEAD
 			JSONObject json = jParser.makeHttpRequest(url_all_restaurants,
 					"GET", params);
+=======
+			JSONObject json = jParser.makeHttpRequest(url_all_restaurants, "GET", params);
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 			/**
 			 * Check log cat for JSON reponse.
 			 */
@@ -212,15 +298,28 @@ public class AllRestaurantsActivity extends ListActivity {
 				 * Checking for SUCCESS TAG.
 				 */
 				int success = json.getInt(TAG_SUCCESS);
+<<<<<<< HEAD
 				if (success == 1) {
 					/**
 					 * Restaurants found. Getting Array of restaurants.
+=======
+				if (success == 1) 
+				{
+					/**
+					 * Restaurants found.
+					 *  Getting Array of restaurants.
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 					 */
 					restaurants = json.getJSONArray(TAG_restaurants);
 					/**
 					 * Looping through All restaurants.
 					 */
+<<<<<<< HEAD
 					for (int i = 0; i < restaurants.length(); i++) {
+=======
+					for (int i = 0; i < restaurants.length(); i++) 
+					{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 						JSONObject c = restaurants.getJSONObject(i);
 						/**
 						 * Storing each json item in variable.
@@ -228,6 +327,7 @@ public class AllRestaurantsActivity extends ListActivity {
 						String id = c.getString(TAG_rest_id);
 						String name = c.getString(TAG_NAME);
 						String cuisine = c.getString(TAG_CUI);
+<<<<<<< HEAD
 						int rest_id = Integer.parseInt(id);
 
 						/**
@@ -265,30 +365,55 @@ public class AllRestaurantsActivity extends ListActivity {
 						if (rest_id == 9) {
 							avatar = R.drawable.lusikas;
 						}
+=======
+						/**
+						 * Creating new HashMap.
+						 */
+						HashMap<String, String> map = new HashMap<String, String>();
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 						/**
 						 * Adding each child node to HashMap key => value.
 						 */
 						map.put(TAG_rest_id, id);
 						map.put(TAG_NAME, name);
 						map.put(TAG_CUI, cuisine);
+<<<<<<< HEAD
 						map.put(TAG_AVATAR, avatar);
+=======
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 						/**
 						 * Adding HashList to ArrayList.
 						 */
 						restaurantsList.add(map);
 					}
+<<<<<<< HEAD
 				} else {
 				}
 			} catch (JSONException e) {
+=======
+				} else 
+				{
+				}
+			}catch (JSONException e) 
+			{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 				e.printStackTrace();
 			}
 			return null;
 		}
+<<<<<<< HEAD
 
 		/**
 		 * /** After completing background task Dismiss the progress dialog
 		 * **/
 		protected void onPostExecute(String file_url) {
+=======
+		/**
+		 * After completing background task Dismiss the progress dialog
+		 * **/
+		protected void onPostExecute(String file_url) 
+		{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 			/**
 			 * Dismiss the dialog after getting all restaurants.
 			 */
@@ -296,6 +421,7 @@ public class AllRestaurantsActivity extends ListActivity {
 			/**
 			 * Updating UI from Background Thread.
 			 */
+<<<<<<< HEAD
 			runOnUiThread(new Runnable() {
 				public void run() {
 					/**
@@ -307,6 +433,16 @@ public class AllRestaurantsActivity extends ListActivity {
 							R.layout.list_item, new String[] { TAG_rest_id,
 									TAG_NAME, TAG_AVATAR }, new int[] {
 									R.id.rest_id, R.id.name, R.id.avatar });
+=======
+			runOnUiThread(new Runnable() 
+			{
+				public void run() 
+				{
+					/**
+					 * Updating parsed JSON data into ListView
+					 * */
+					ListAdapter adapter = new SimpleAdapter(AllRestaurantsActivity.this, restaurantsList,R.layout.list_item, new String[] { TAG_rest_id,TAG_NAME,TAG_PHOTO},new int[] { R.id.rest_id, R.id.name });
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 					/**
 					 * Updating listview.
 					 */
@@ -315,11 +451,15 @@ public class AllRestaurantsActivity extends ListActivity {
 			});
 		}
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	/**
 	 * Only portrait view.
 	 */
 	@Override
+<<<<<<< HEAD
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
 	}
@@ -328,10 +468,22 @@ public class AllRestaurantsActivity extends ListActivity {
 	 * Back button was pressed. Menu screen started.
 	 */
 	public void back(View v) {
+=======
+	public void onConfigurationChanged(Configuration newConfig) 
+	{  
+		super.onConfigurationChanged(newConfig);  
+	}
+	/**
+	 * Back button was pressed. Menu screen started.
+	 */
+	public void back(View v)
+	{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 		this.finish();
 		Intent intent = new Intent(this, MenuActivity.class);
 		startActivity(intent);
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Function to display simple Alert Dialog
@@ -370,4 +522,6 @@ public class AllRestaurantsActivity extends ListActivity {
 		alertDialog.show();
 	}
 
+=======
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 }

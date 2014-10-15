@@ -3,14 +3,16 @@
     package="activ.foody"
     android:versionCode="1"
     android:versionName="1.0" >
-
     <uses-sdk android:minSdkVersion="8" />
-
+    
     <application
         android:configChanges="keyboardHidden|orientation"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
+<<<<<<< HEAD
 
+=======
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
         <!-- Welcome screen activity -->
         <activity
             android:name="activ.foody.WelcomeActivity"
@@ -19,11 +21,14 @@
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <!-- Restaurants Activity -->
+=======
+        <!--Restaurants Activity -->
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
         <activity
             android:name="activ.rest.AllRestaurantsActivity"
             android:configChanges="keyboardHidden|orientation"
@@ -47,6 +52,7 @@
             android:name="activ.rest.RestInfoActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait" >
+<<<<<<< HEAD
         </activity>
         <!-- Restaurant pizza Activity -->
         <activity
@@ -99,4 +105,10 @@
     <!-- Network State Permissions -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+=======
+        </activity>
+    </application>
+    <!-- Internet Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 </manifest>

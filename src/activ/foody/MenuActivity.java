@@ -15,6 +15,7 @@ import android.view.Window;
  * 
  * Menu window.With two buttons: "cuisines" and "restaurants".
  */
+<<<<<<< HEAD
 public class MenuActivity extends Activity {
 	/**
 	 * flag for Internet connection status.
@@ -24,6 +25,10 @@ public class MenuActivity extends Activity {
 	 * Connection detector class.
 	 */
 	instruments.ConnectionDetector cd;
+=======
+public class MenuActivity extends Activity
+{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	/**
 	 * On create method, content intilization.
 	 */
@@ -79,6 +84,7 @@ public class MenuActivity extends Activity {
 	 * Action when we click on restorans button. When we click this button , we
 	 * go to the restorans window.
 	 */
+<<<<<<< HEAD
 	public void cuisClick(View v) {
 		finish();
 
@@ -90,19 +96,31 @@ public class MenuActivity extends Activity {
 		 * Starting new activity
 		 */
 		startActivity(in);
+=======
+	public void cuisClick(View v)
+	{
+		Intent intent = new Intent(this, CuisActivity.class);
+		startActivity(intent);
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	}
 	/**
 	 * Action when we click on restorans button. When we click this button , we
 	 * go to the restorans window.
 	 */
+<<<<<<< HEAD
 	public void restClick(View v) {
 		finish();
+=======
+	public void restClick(View v)
+	{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 		/**
 		 * Start new intent.
 		 */
 		Intent in = new Intent(getApplicationContext(),
 				AllRestaurantsActivity.class);
 		/**
+<<<<<<< HEAD
 		 * Starting new activity
 		 */
 		startActivity(in);
@@ -145,5 +163,10 @@ public class MenuActivity extends Activity {
 		 * Showing Alert Message.
 		 */
 		alertDialog.show();
+=======
+		 * Starting new activity and expecting some response back.
+		 */
+		startActivityForResult(in, 100);
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	}
 }

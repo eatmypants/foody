@@ -35,7 +35,11 @@
         android:layout_below="@+id/cuisineHeader"
         android:layout_marginTop="-5dp"
         android:background="@drawable/pizza"
+<<<<<<< HEAD
         android:onClick="clickPizza" />
+=======
+        android:onClick="clickCuis" />
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
     <!-- Italian cuisine button -->
 
     <Button
@@ -47,8 +51,12 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/pizzaButton"
         android:layout_marginTop="5dp"
+<<<<<<< HEAD
         android:background="@drawable/italian"
         android:onClick="clickItalian"  />
+=======
+        android:background="@drawable/italian" />
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
     <!-- back button -->
 
     <Button

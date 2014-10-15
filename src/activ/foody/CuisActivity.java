@@ -2,12 +2,15 @@ package activ.foody;
 
 import instruments.CustomPagerAdapter;
 import activ.foody.R;
+<<<<<<< HEAD
 import activ.rest.FrenchRestaurants;
 import activ.rest.ItalianRestaurants;
 import activ.rest.JapaneseRestaurants;
 import activ.rest.MedievalRestaurants;
 import activ.rest.PizzaRestaurants;
 import activ.rest.RussianRestaurants;
+=======
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -18,6 +21,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.support.v4.view.ViewPager;
+<<<<<<< HEAD
 
 /**
  * Screen with cuisines.
@@ -39,12 +43,26 @@ public class CuisActivity extends Activity {
 	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+=======
+/**
+ * Screen with cuisines.
+ */
+public class CuisActivity extends Activity
+{
+	/**
+	 * Oncreate method. Content and view initilization.
+	 */
+	@Override
+	public void onCreate(Bundle savedInstanceState)
+	{ 
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 		/**
 		 * No title on top of the screen.
 		 */
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		/**
+<<<<<<< HEAD
 		 * Check if internet is turn on.
 		 */
 		checkConnection();
@@ -98,6 +116,11 @@ public class CuisActivity extends Activity {
 	 * Objects initialization.
 	 */
 	public void initialization() {
+=======
+		 * Set content view.
+		 */
+		setContentView(R.layout.cuisine);
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 		/**
 		 * Create and set adapter.
 		 */
@@ -107,6 +130,15 @@ public class CuisActivity extends Activity {
 		myPager.setCurrentItem(0);
 	}
 	/**
+<<<<<<< HEAD
+=======
+	 * When some of cuisines was clicked.
+	 */
+	public void clickCuis(View v)
+	{
+	}
+	/**
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	 * Only portrait view.
 	 */
 	@Override
@@ -116,6 +148,7 @@ public class CuisActivity extends Activity {
 	/**
 	 * When back button was clicked opened menu screen.
 	 */
+<<<<<<< HEAD
 	public void back(View v) {
 		finish();
 		Intent intent = new Intent(this, MenuActivity.class);
@@ -212,4 +245,11 @@ public class CuisActivity extends Activity {
 		alertDialog.show();
 	}
 
+=======
+	public void back(View v)
+	{
+		Intent intent = new Intent(this, MenuActivity.class);
+		startActivity(intent);
+	}
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 }

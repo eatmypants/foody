@@ -34,8 +34,12 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/cuisineHeader"
         android:layout_marginTop="-5dp"
+<<<<<<< HEAD
         android:background="@drawable/french"
         android:onClick="clickFrench"  />
+=======
+        android:background="@drawable/french" />
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
     <!-- Japan cuisine button -->
 
     <Button
@@ -47,8 +51,12 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/frenchButton"
         android:layout_marginTop="5dp"
+<<<<<<< HEAD
         android:background="@drawable/japan" 
         android:onClick="clickJapanese" />
+=======
+        android:background="@drawable/japan" />
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
     <!-- Back button -->
 
     <Button

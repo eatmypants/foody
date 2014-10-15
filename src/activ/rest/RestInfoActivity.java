@@ -1,6 +1,7 @@
 package activ.rest;
 
 import instruments.JSONParser;
+<<<<<<< HEAD
 
 
 import java.io.InputStream;
@@ -8,11 +9,16 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+=======
+import java.util.ArrayList;
+import java.util.List;
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+<<<<<<< HEAD
 
 import activ.foody.R;
 import android.app.Activity;
@@ -24,12 +30,20 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+=======
+import activ.foody.R;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.res.Configuration;
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+<<<<<<< HEAD
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -50,6 +64,17 @@ public class RestInfoActivity extends Activity
 	/**
 	 * Text views where information were going to be put. Avarage price of the
 	 * restaurant.
+=======
+import android.widget.TextView;
+/**
+ *Screen with restaurant information.
+ */
+public class RestInfoActivity extends Activity
+{
+	/**
+	 * Text views where information were going to be put.
+	 * Avarage price of the restaurant.
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	 */
 	TextView txtPrice;
 	/**
@@ -90,18 +115,28 @@ public class RestInfoActivity extends Activity
 	private static final String TAG_DESCRIPTION = "description";
 	private static final String TAG_LOCATION = "location";
 	private static final String TAG_LINK = "link";
+<<<<<<< HEAD
 	private static final String TAG_PHOTO = "main_image_url";
 
+=======
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	/**
 	 * On create method. Initilization of content and view.
 	 */
 	@Override
+<<<<<<< HEAD
 	public void onCreate(Bundle savedInstanceState) {
 
+=======
+	public void onCreate(Bundle savedInstanceState) 
+	{
+		super.onCreate(savedInstanceState);
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 		/**
 		 * No title on top
 		 */
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+<<<<<<< HEAD
 		super.onCreate(savedInstanceState);
 		/**
 		 * Check internet connection.
@@ -237,11 +272,98 @@ public class RestInfoActivity extends Activity
 	 * Background Async Task to Get complete restaurant details
 	 */
 	class GetRestDetails extends AsyncTask<String, String, String> {
+=======
+		/**
+		 * Set content view.
+		 */
+		setContentView(R.layout.restinfo);
+		/**
+		 * Find text views by id.
+		 * Description.
+		 */
+		TextView desc = (TextView)findViewById(R.id.inputDesc);
+		/**
+		 * Price label.
+		 */
+		 TextView price = (TextView)findViewById(R.id.price);
+		 /**
+		  * Location label.
+		  */
+	     TextView location = (TextView)findViewById(R.id.location);
+	     /**
+	      * Price.
+	      */
+	     TextView inputprice = (TextView)findViewById(R.id.inputPrice);
+	     /**
+	      * Location.
+	      */
+	      TextView inputlocation = (TextView)findViewById(R.id.inputLocation);
+	      /**
+	       * Link label.
+	       */
+	      TextView link= (TextView)findViewById(R.id.link);
+	      /**
+	       * Link.
+	       */
+	      TextView inputlink = (TextView)findViewById(R.id.inputLink);
+	      /**
+	       * EUR.
+	       */
+	      TextView EUR = (TextView)findViewById(R.id.EUR);
+	      /**
+	       * Comments label.
+	       */
+	      TextView comments= (TextView)findViewById(R.id.comments);
+	      /**
+	       * Comments.
+	       */
+	      TextView inputcomments = (TextView)findViewById(R.id.inputComments);
+	      /**
+	       * Fon creation.
+	       */
+	      Typeface custom_font = Typeface.createFromAsset(getAssets(),"fonts/koz.otf");
+	      /**
+	       * Put all textviews with koz.otf font.
+	       */
+	      desc.setTypeface(custom_font);
+	      link.setTypeface(custom_font);
+	      EUR.setTypeface(custom_font);
+	      inputlink.setTypeface(custom_font);
+	      comments.setTypeface(custom_font); 
+	      inputcomments.setTypeface(custom_font);
+	      price.setTypeface(custom_font);
+	      location.setTypeface(custom_font);
+	      inputprice.setTypeface(custom_font); 
+	      inputlocation.setTypeface(custom_font);
+	      /**
+	       * Getting restaurant details from intent.
+	       */
+	      Intent i = getIntent();
+	      /**
+	       * Getting restaurant id (rest_id) from intent.
+	       */
+	      rest_id = i.getStringExtra(TAG_RES_ID);
+	      /**
+	       * Getting complete restaurant details in background thread.
+	       */
+	      new GetRestDetails().execute();
+	 }
+	/**
+	* Background Async Task to Get complete restaurant details
+	*/
+	class GetRestDetails extends AsyncTask<String, String, String> 
+	{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 		/**
 		 * Before starting background thread Show Progress Dialog
 		 * */
 		@Override
+<<<<<<< HEAD
 		protected void onPreExecute() {
+=======
+		protected void onPreExecute() 
+		{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 			super.onPreExecute();
 			pDialog = new ProgressDialog(RestInfoActivity.this);
 			pDialog.setMessage("Loading rest details. Please wait...");
@@ -249,6 +371,7 @@ public class RestInfoActivity extends Activity
 			pDialog.setCancelable(true);
 			pDialog.show();
 		}
+<<<<<<< HEAD
 
 		/**
 		 * Getting restaurant details in background thread
@@ -259,11 +382,30 @@ public class RestInfoActivity extends Activity
 			 */
 			runOnUiThread(new Runnable() {
 				public void run() {
+=======
+		/**
+		 * Getting restaurant details in background thread
+		 * */
+		protected String doInBackground(String... params) 
+		{
+			/**
+			 * Updating UI from Background Thread.
+			 */
+			runOnUiThread(new Runnable() 
+			{
+				public void run() 
+				{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 					/**
 					 * Check for success tag.
 					 */
 					int success;
+<<<<<<< HEAD
 					try {
+=======
+					try 
+					{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 						/**
 						 * Building Parameters..
 						 */
@@ -271,6 +413,7 @@ public class RestInfoActivity extends Activity
 						params.add(new BasicNameValuePair("rest_id", rest_id));
 						/**
 						 * Getting restaurant details by making HTTP request.
+<<<<<<< HEAD
 						 * Note that restaurant details url will use GET
 						 * request.
 						 */
@@ -278,12 +421,20 @@ public class RestInfoActivity extends Activity
 								url_restaurant_detials, "GET", params);
 						/**
 						 * Check log for json response.
+=======
+						 * Note that restaurant details url will use GET request.
+						 */
+						JSONObject json = jsonParser.makeHttpRequest(url_restaurant_detials, "GET", params);
+						/**
+						 * Check  log for json response.
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 						 */
 						Log.d("Single Rest Details", json.toString());
 						/**
 						 * Json success tag.
 						 */
 						success = json.getInt(TAG_SUCCESS);
+<<<<<<< HEAD
 						if (success == 1) {
 							/**
 							 * Successfully received restaurant details. JSON
@@ -291,10 +442,20 @@ public class RestInfoActivity extends Activity
 							 */
 							JSONArray restaurantObj = json
 									.getJSONArray(TAG_RESTAURANTS);
+=======
+						if (success == 1) 
+						{
+							/**
+							 * Successfully received restaurant details.
+							 * JSON Array.
+							 */
+							JSONArray restaurantObj = json.getJSONArray(TAG_RESTAURANTS); 
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 							/**
 							 * Get first restaurant object from JSON Array.
 							 * restaurant with this rest_id found.
 							 */
+<<<<<<< HEAD
 							JSONObject restaurant = restaurantObj
 									.getJSONObject(0);
 							/**
@@ -302,10 +463,17 @@ public class RestInfoActivity extends Activity
 							 */
 							String PhotoUrl = restaurant.getString(TAG_PHOTO);
 							new LoadImage().execute(PhotoUrl);
+=======
+							JSONObject restaurant = restaurantObj.getJSONObject(0);
+							/**
+							 * Put in variables textview objects.
+							 */
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 							txtPrice = (TextView) findViewById(R.id.inputPrice);
 							txtDesc = (TextView) findViewById(R.id.inputDesc);
 							txtLocation = (TextView) findViewById(R.id.inputLocation);
 							txtLink = (TextView) findViewById(R.id.inputLink);
+<<<<<<< HEAD
 							txtPrice.setText(restaurant
 									.getString(TAG_AVG_PRICE));
 							txtDesc.setText(restaurant
@@ -316,17 +484,37 @@ public class RestInfoActivity extends Activity
 
 						} 
 					} catch (JSONException e) {
+=======
+							txtPrice.setText(restaurant.getString(TAG_AVG_PRICE ));
+							txtDesc.setText(restaurant.getString(TAG_DESCRIPTION));
+							txtLocation.setText(restaurant.getString(TAG_LOCATION));
+							txtLink.setText(restaurant.getString(TAG_LINK));
+						}else
+						{
+							// restaurant with rest_id not found
+						}
+					}catch (JSONException e) 
+					{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 						e.printStackTrace();
 					}
 				}
 			});
 			return null;
 		}
+<<<<<<< HEAD
 
 		/**
 		 * After completing background task Dismiss the progress dialog
 		 * **/
 		protected void onPostExecute(String file_url) {
+=======
+		/**
+		 * After completing background task Dismiss the progress dialog
+		 * **/
+		protected void onPostExecute(String file_url) 
+		{
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 			/**
 			 * Dismiss the dialog once got all details.
 			 */
@@ -335,6 +523,7 @@ public class RestInfoActivity extends Activity
 	}
 	/**
 	 * Back button pressed. Go back to the all restaurant list.
+<<<<<<< HEAD
 	 */
 	public void back(View v) {
 		finish();
@@ -378,10 +567,21 @@ public class RestInfoActivity extends Activity
 		}
 	}
 
+=======
+	 * @param v
+	 */
+	public void back(View v)
+	{
+		this.finish();
+		Intent intent = new Intent(this, AllRestaurantsActivity.class);
+		startActivity(intent);
+	}
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 	/**
 	 * Only portrait view.
 	 */
 	@Override
+<<<<<<< HEAD
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
 	}
@@ -430,4 +630,10 @@ public class RestInfoActivity extends Activity
 		alertDialog.show();
 	}
 
+=======
+	public void onConfigurationChanged(Configuration newConfig) 
+	{  
+		super.onConfigurationChanged(newConfig);  
+	}
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
 }

@@ -34,8 +34,12 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/cuisineHeader"
         android:layout_marginTop="-5dp"
+<<<<<<< HEAD
         android:background="@drawable/russian"
         android:onClick="clickRussian"  />
+=======
+        android:background="@drawable/russian" />
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
     <!-- medieval cuisine button -->
 
     <Button
@@ -47,8 +51,12 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/russianButton"
         android:layout_marginTop="5dp"
+<<<<<<< HEAD
         android:background="@drawable/medieval" 
         android:onClick="clickMedieval" />
+=======
+        android:background="@drawable/medieval" />
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
     <!-- back button -->
 
     <Button

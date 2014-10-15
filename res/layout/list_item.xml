@@ -24,9 +24,14 @@
             android:id="@+id/avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp" />
 
+=======
+            android:layout_marginTop="5dp"
+            android:src="@drawable/empty" />
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
         <!-- Restaurant name -->
 
         <TextView
@@ -34,14 +39,20 @@
             android:layout_width="fill_parent"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
+<<<<<<< HEAD
             android:layout_marginLeft="20dp"
+=======
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
             android:layout_marginRight="30dp"
             android:layout_toRightOf="@+id/avatar"
             android:paddingLeft="6dip"
             android:paddingTop="30dip"
             android:textColor="#403729"
             android:textSize="20dip" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
     </RelativeLayout>
 
 </LinearLayout>

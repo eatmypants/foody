@@ -11,6 +11,7 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
+<<<<<<< HEAD
         public static final int americana=0x7f020000;
         public static final int back=0x7f020001;
         public static final int bastion=0x7f020002;
@@ -41,6 +42,30 @@ public final class R {
         public static final int troika=0x7f02001b;
         public static final int vapiano=0x7f02001c;
         public static final int welcomescreen=0x7f02001d;
+=======
+        public static final int back=0x7f020000;
+        public static final int cui=0x7f020001;
+        public static final int cuibutton=0x7f020002;
+        public static final int cuifooter=0x7f020003;
+        public static final int cuisines=0x7f020004;
+        public static final int empty=0x7f020005;
+        public static final int french=0x7f020006;
+        public static final int hr=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int italian=0x7f020009;
+        public static final int japan=0x7f02000a;
+        public static final int medieval=0x7f02000b;
+        public static final int menulogo=0x7f02000c;
+        public static final int pizza=0x7f02000d;
+        public static final int rest=0x7f02000e;
+        public static final int restaurants=0x7f02000f;
+        public static final int restbutton=0x7f020010;
+        public static final int restfooter=0x7f020011;
+        public static final int russian=0x7f020012;
+        public static final int search=0x7f020013;
+        public static final int vapiano=0x7f020014;
+        public static final int welcomescreen=0x7f020015;
+>>>>>>> e397340e3e81b695d1a11a09dedcc2fc18d400a5
     }
     public static final class id {
         public static final int CuisinesButton=0x7f060010;
