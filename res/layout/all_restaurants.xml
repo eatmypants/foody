@@ -1,65 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="#ffffff" >
-  <!-- Header aligned to top -->
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <!-- Header aligned to top -->
+
     <RelativeLayout
-    android:id="@+id/header"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:background="@drawable/restaurants"
-    android:gravity="center" >
-
-  </RelativeLayout>
-  
-
-
-  <!-- Footer aligned to bottom -->
-  <RelativeLayout
-    android:id="@+id/footer"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:background="@drawable/restfooter"
-    android:gravity="center" >
-
-      <Button
-          android:id="@+id/button1"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_alignParentLeft="true"
-          android:layout_alignParentTop="true"
-          android:layout_marginLeft="-260dp"
-          android:layout_marginTop="7dp"
-          android:onClick="back"
-          android:background="@drawable/back" />
-  
-  </RelativeLayout>
-
-          <LinearLayout
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:layout_marginBottom="50dp"
-              android:layout_marginTop="47dp"
-              android:background="#ffffff"
-              android:orientation="vertical" >
-
-<!-- Main ListView 
-		 Always give id value as list(@android:id/list)
-	-->
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="fill_parent"
+        android:id="@+id/header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"/>
-    
-    
-    
+        android:layout_alignParentTop="true"
+        android:background="@drawable/restaurants"
+        android:gravity="center" >
+    </RelativeLayout>
+    <!-- Searching -->
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/header"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/search"
+        android:ems="10"
+        android:hint="Search..."
+        android:inputType="textVisiblePassword"
+        android:paddingLeft="40dp"
+        android:paddingRight="10dp" >
+
+        <requestFocus />
+    </EditText>
+
+    <!-- Footer aligned to bottom -->
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/restfooter"
+        android:gravity="center" >
+
+        <!-- Back button -->
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="-260dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/back"
+            android:onClick="back" />
+    </RelativeLayout>
+    <!-- Linear layout -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="105dp"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <!-- List view -->
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-10dp"
+            android:background="#ffffff" />
     </LinearLayout>
-
-
 
 </RelativeLayout>

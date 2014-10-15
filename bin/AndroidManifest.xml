@@ -11,53 +11,92 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
 
-
+        <!-- Welcome screen activity -->
         <activity
             android:name="activ.foody.WelcomeActivity"
+            android:configChanges="keyboardHidden|orientation"
             android:label="@string/app_name"
-             android:screenOrientation="portrait"
-                  android:configChanges="keyboardHidden|orientation" >
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-     
-        <!-- Add Restaurants Activity -->
+        <!-- Restaurants Activity -->
         <activity
-            android:name=".AllRestaurantsActivity"
-             android:screenOrientation="portrait"
-                  android:configChanges="keyboardHidden|orientation"
-             >
+            android:name="activ.rest.AllRestaurantsActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
-        
         <!-- Menu Activity -->
         <activity
             android:name=".MenuActivity"
-             android:screenOrientation="portrait"
-                  android:configChanges="keyboardHidden|orientation"
-         >
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" >
         </activity>
-
         <!-- Cuisines Activity -->
         <activity
             android:name=".CuisActivity"
-             android:screenOrientation="portrait"
-                  android:configChanges="keyboardHidden|orientation"
-             >
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" >
         </activity>
         <!-- Restaurant information Activity -->
         <activity
-            android:name="activ.foody.RestInfoActivity"
-             android:screenOrientation="portrait"
-                  android:configChanges="keyboardHidden|orientation"
-            >
+            android:name="activ.rest.RestInfoActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- Restaurant pizza Activity -->
+        <activity
+            android:name="activ.rest.PizzaRestaurants"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <!-- Restaurant italian Activity -->
+        <activity
+            android:name="activ.rest.ItalianRestaurants"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+
+        <!-- Restaurant japanese Activity -->
+        <activity
+            android:name="activ.rest.JapaneseRestaurants"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+
+        <!-- Restaurant medieval Activity -->
+        <activity
+            android:name="activ.rest.MedievalRestaurants"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+
+        <!-- Restaurant russian Activity -->
+        <activity
+            android:name="activ.rest.RussianRestaurants"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <!-- Restaurant french Activity -->
+        <activity
+            android:name="activ.rest.FrenchRestaurants"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
     </application>
-
-    <!--  Internet Permissions -->
+    <!-- Internet Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Network State Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

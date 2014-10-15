@@ -1,63 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="#FFFFFF">
-    
-    <!-- Name Label -->
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Restaurant Name"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:textSize="17dip"/>
-    
-    <!-- Input Name -->
-	<TextView android:id="@+id/inputName"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_margin="5dip"
-	    android:layout_marginBottom="15dip"
-	    android:singleLine="true"/>
-	
-	<!-- Price Label -->
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text=" AVG Price"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:textSize="17dip"/>
-    
-    <!-- Input Price -->
-	<TextView android:id="@+id/inputPrice" 
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_margin="5dip"
-	    android:layout_marginBottom="15dip"
-	    android:singleLine="true"
-	    android:inputType="numberDecimal"/>
-	
-	<!-- Description Label -->
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Description"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:textSize="17dip"/>
-    
-    <!-- Input description -->
-	<TextView android:id="@+id/inputDesc" 
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_margin="5dip"
-	    android:layout_marginBottom="15dip"
-	    android:lines="4"
-	    android:gravity="top"/>
-	
+    android:background="#ffffff" >
 
-	
-</LinearLayout>
+    <!-- Footer aligned to bottom -->
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/restfooter"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="-260dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/back"
+            android:onClick="back" />
+    </RelativeLayout>
+    <!-- Scroll view -->
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/footer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/mainImage"
+        android:layout_marginTop="-38dp" >
+
+        <!-- Linear layout -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical" >
+
+            <!-- Input description -->
+
+            <TextView
+                android:id="@+id/inputDesc"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:layout_marginBottom="15dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:textColor="#1f1104" />
+
+            <ImageView
+                android:id="@+id/hr1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/hr" />
+            <!-- Price layout -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center" >
+
+                <!-- Price label -->
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="150dp"
+                    android:layout_marginTop="12dp"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:paddingTop="10dip"
+                    android:text="Avarage price:"
+                    android:textColor="#1f1104"
+                    android:textSize="17dip" />
+
+                <!-- Input Price -->
+
+                <TextView
+                    android:id="@+id/inputPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dip"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="14dip"
+                    android:paddingRight="10dip"
+                    android:paddingTop="22dip"
+                    android:text="8.00"
+                    android:textSize="13dip"
+                    android:textColor="#1f1104" />
+                <!-- EUR label -->
+
+                <TextView
+                    android:id="@+id/EUR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/price"
+                    android:layout_alignBottom="@+id/price"
+                    android:layout_marginLeft="-7dp"
+                    android:layout_toRightOf="@+id/inputPrice"
+                    android:text="EUR" 
+                    android:textSize="13dip"
+                    android:textColor="#1f1104"/>
+            </RelativeLayout>
+
+            <!-- Location Label -->
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:paddingTop="10dip"
+                android:text="Where to find?"
+                android:textColor="#1f1104"
+                android:textSize="17dip"
+                 />
+
+            <!-- Input location -->
+
+            <TextView
+                android:id="@+id/inputLocation"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:layout_marginBottom="15dip"
+                android:paddingLeft="20dip"
+                android:gravity="top"
+                android:textSize="13dip"
+                android:textColor="#1f1104"  />
+            <!-- Link layout -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center" >
+
+                <!-- Link label -->
+
+                <TextView
+                    android:id="@+id/link"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="180dp"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:paddingTop="10dip"
+                    android:text="Web-page:"
+                    android:textColor="#1f1104"
+                    android:textSize="17dip"
+                    />
+
+                <!-- Input link -->
+
+                <TextView
+                    android:id="@+id/inputLink"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="15dip"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="top"
+                    android:paddingLeft="20dip"
+                    android:paddingRight="10dip"
+                    android:textColor="#1f1104"
+                    android:textSize="13dip" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/hr2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/hr" />
+            <!-- Comments label -->
+
+            <TextView
+                android:id="@+id/comments"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:paddingTop="10dip"
+                android:text="Comments:"
+                android:textSize="17dip" />
+            <!-- input comments -->
+
+            <TextView
+                android:id="@+id/inputComments"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:layout_marginBottom="15dip"
+                android:paddingLeft="20dip"
+                android:gravity="top"
+                android:textSize="13dip"
+                android:text="Are comming soon ...(2nd iteration)" />
+
+            <ImageView
+                android:id="@+id/hr3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/hr" />
+        </LinearLayout>
+    </ScrollView>
+    <!-- Main restaurant image. -->
+
+    <ImageView
+        android:id="@+id/mainImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-28dp"
+         />
+
+</RelativeLayout>

@@ -15,7 +15,7 @@ require_once __DIR__ . '/db_connect.php';
 $db = new DB_CONNECT();
 
 // get all restaurant from restaurant table
-$result = mysql_query("SELECT *FROM restaurants") or die(mysql_error());
+$result = mysql_query("SELECT restaurant.rest_id, restaurant.cui_id, restaurant.name, restaurant.location, restaurant.description, restaurant.avg_price, restaurant.link, restaurant_image.avatar_image_url FROM restaurant INNER JOIN restaurant_image ON restaurant.rest_id = restaurant_image.rest_id ") or die(mysql_error());
 
 // check for empty result
 if (mysql_num_rows($result) > 0) {
@@ -31,7 +31,7 @@ if (mysql_num_rows($result) > 0) {
         $restaurant["avg_price"] = $row["avg_price"];
         $restaurant["description"] = $row["description"];
         $restaurant["cuisine"] = $row["cuisine"];
-      
+        $restaurant["avatar_image_url"] = $row["avatar_image_url"];
 
 
 
@@ -43,6 +43,7 @@ if (mysql_num_rows($result) > 0) {
 
     // echoing JSON response
     echo json_encode($response);
+
 } else {
     // no restaurant found
     $response["success"] = 0;

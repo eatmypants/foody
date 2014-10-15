@@ -4,53 +4,61 @@
     android:layout_height="match_parent"
     android:background="#ffffff" >
 
+    <!-- Cuisine header -->
+
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/cuisineHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="-5dp"
         android:src="@drawable/cuisines" />
+    <!-- Cuisine footer -->
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/cuisineFooter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="-5dp"
         android:src="@drawable/cuifooter" />
+    <!-- French cuisine button -->
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/frenchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/imageView1"
+        android:layout_below="@+id/cuisineHeader"
         android:layout_marginTop="-5dp"
         android:background="@drawable/french"
-        />
+        android:onClick="clickFrench"  />
+    <!-- Japan cuisine button -->
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/japanButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageView2"
+        android:layout_above="@+id/cuisineFooter"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/frenchButton"
         android:layout_marginTop="5dp"
-        android:background="@drawable/japan" />
-        <Button
-        android:id="@+id/button3"
+        android:background="@drawable/japan" 
+        android:onClick="clickJapanese" />
+    <!-- Back button -->
+
+    <Button
+        android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="-12dp"
-        android:onClick="back"
-        android:background="@drawable/back" />
+        android:layout_marginBottom="-5dp"
+        android:background="@drawable/back"
+        android:onClick="back" />
 
 </RelativeLayout>

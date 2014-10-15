@@ -18,9 +18,13 @@ $db = new DB_CONNECT();
 // check for post data
 if (isset($_GET["rest_id"])) {
     $rid = $_GET['rest_id'];
+	
+	
+	
+
 
     // get a restaurant from products table
-    $result = mysql_query("SELECT *FROM restaurants WHERE rest_id = $rid");
+    $result = mysql_query("SELECT restaurant.rest_id, restaurant.cui_id, restaurant.name, restaurant.location, restaurant.description, restaurant.avg_price, restaurant.link, restaurant_image.main_image_url FROM restaurant INNER JOIN restaurant_image ON restaurant.rest_id = restaurant_image.rest_id  WHERE restaurant.rest_id = $rid");
 
     if (!empty($result)) {
         // check for empty result
@@ -33,7 +37,10 @@ if (isset($_GET["rest_id"])) {
             $restaurant["name"] = $result["name"];
             $restaurant["avg_price"] = $result["avg_price"];
             $restaurant["description"] = $result["description"];
-            $restaurant["cuisine"] = $result["cuisine"];
+           $restaurant["location"] = $result["location"];
+            $restaurant["link"] = $result["link"];
+			$restaurant["main_image_url"] = $result["main_image_url"];
+    
      
             // success
             $response["success"] = 1;
